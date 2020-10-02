@@ -15,4 +15,4 @@ WORKDIR /root
 #COPY start.sh /root/start.sh
 #RUN chmod +x /root/start.sh
 #ENTRYPOINT ["/root/start.sh"]
-ENTRYPOINT ["/bin/bash"]
+CMD sleep 60000
