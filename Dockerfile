@@ -10,7 +10,12 @@ RUN yum install -y java-1.8.0-openjdk
 USER root
 EXPOSE 80 8080
 WORKDIR /root
-ADD https://github.com/cunlifs/DT7/releases/tag/v1/dt7_rest.tar.gz /root/
+#ADD https://github.com/cunlifs/DT7/releases/tag/v1/dt7_rest.tar.gz /root/
+# add product installations
+ENV LPAR_VER_MAJ "6.20"
+ENV LPAR_VER_MIN ""
+ENV LPAR_VER "$LPAR_VER_MAJ$LPAR_VER_MIN"
+ADD https://lpar2rrd.com/download-static/lpar2rrd-$LPAR_VER.tar /home/lpar2rrd/
 #ADD  dt7_rest.tar.gz /root
 #COPY start.sh /root/start.sh
 #RUN chmod +x /root/start.sh
