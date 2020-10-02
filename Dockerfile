@@ -8,8 +8,10 @@ RUN yum install -y nano wget curl net-tools lsof
 RUN yum install -y sg3_utils
 RUN yum install -y java-1.8.0-openjdk
 USER root
+EXPOSE 80 8080
 WORKDIR /root
 ADD https://github.com/cunlifs/DT7/releases/tag/v1 /root
 #ADD  dt7_rest.tar.gz /root
 COPY start.sh /root/start.sh
+RUN chmod +x /root/start.sh
 ENTRYPOINT ["/root/start.sh"]
