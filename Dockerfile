@@ -1,9 +1,8 @@
-FROM cunlifs/daytrader7:v0.2
+FROM cunlifs/daytrader7:v0.5
 ENV http_proxy http://9.196.156.29:3128
 ENV https_proxy http://9.196.156.29:3128
 
 USER root
-RUN yum install tree -y
 
 EXPOSE 10200
 WORKDIR /root
